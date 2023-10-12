@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Step 3 Add Header -->
+<%- include("./partials/header.ejs") %>
+
+<!-- Step 2 - If an adjectiveective and Noun are sent to this ejs file, 
+    Change the h1 to show the adjectiveective and Noun.
+    But when the user first goes on the website and there is no adjectiveective and Noun, 
+    Show the default h1 below -->
+<h1> 
+<% if(locals.adjective == undefined) {%> <%- "Click to make your start-up name!"%> 
+<% }else{ %> <%= `${adjective} ${Noun}`; %> <%} %>
+
+
+</h1>
+<form action="/submit" method="POST">
+  <input type="submit" value="Generate Name">
+</form>
+<!-- Step 3 Add Footer -->
+<%- include("./partials/footer.ejs") %>
+</body>
+</html>
